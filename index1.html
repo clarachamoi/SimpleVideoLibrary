@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Simplevideolibrary by clarachamoi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link href="http://vjs.zencdn.net/5.8.6/video-js.css" rel="stylesheet">
+  </head>
+  <body>
+  <h3>My Videos page</h3>
+
+  <section class="video-player">
+
+    <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+  poster="1.jpg" data-setup="{}">
+    <source src="MY_VIDEO.mov" type='video/mp4'>
+    <!--<source src="MY_VIDEO.webm" type='video/webm'>-->
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>
+
+  <button type="button">Video1</button>
+  <button type="button">Video2</button>
+  <button type="button">Video3</button>
+  </section>
+
+  <script src="http://vjs.zencdn.net/5.8.6/video.js"></script>
+
+<section class="rating">
+
+ <h3>My Videos page</h3>
+
+<div class="stars">
+<form action="" target="_self">  
+<label><input id="rating-1" name="rating" type="radio" value="1"/>1 Star</label>  
+<label><input id="rating-2" name="rating" type="radio" value="2"/>2 Stars</label>  
+<label><input id="rating-3" name="rating" type="radio" value="3"/>3 Stars</label>  
+<label><input id="rating-4" name="rating" type="radio" value="4"/>4 Stars</label>
+<input type="submit" value="Submit">
+</form>
+<br>
+<label id="mylabel">Rating: </label>
+<script >
+  debugger;
+  for (var i=0;i<4;i++){
+    if(document.getElementsByName("rating")[i].checked)
+    {
+      var myid = document.getElementById("mylabel");
+      myid.value = document.getElementsByName("rating").value;
+    }
+  }
+
+</script>
+<label></label>
+
+</div>
+
+<!--<script >
+  
+
+var starRating = {  create: function(selector) {    $(selector).each(function() {      // Hide radio buttons and add star links   
+ });  },  addHandlers: function(item) {    $(item).click(function(e) {      // Handle star click   
+  })    .hover(function() {      // Handle star hover over    
+  },function() {      // Handle star hover out    
+  });  }}
+
+</script>-->
+
+<a href="MY_VIDEO.mov" >View on GitHub</a>
+
+
+</section>
+
+<section class="comments">
+
+ <h3>Leave Comments</h3>
+
+<form >
+<textarea rows="4" cols="50">
+ 
+</textarea>
+  <input type="submit" value="Save Comment">
+</form>
+<input type="button" value="Detailed information about the video" onclick="window.open('details.html')" />
+
+</section>
+
+  
+  </body>
+</html>
