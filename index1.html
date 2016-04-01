@@ -9,26 +9,46 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     <link href="http://vjs.zencdn.net/5.8.6/video-js.css" rel="stylesheet">
+
   </head>
   <body>
+
   <h3>My Videos page</h3>
 
   <section class="video-player">
-
-    <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+    <video id="claravideo" class="video-js" controls preload="auto" width="640" height="264"
   poster="1.jpg" data-setup="{}">
-    <source src="MY_VIDEO.mov" type='video/mp4'>
+    <source src="Video1.mov" type='video/mp4'>
     <!--<source src="MY_VIDEO.webm" type='video/webm'>-->
     <p class="vjs-no-js">
       To view this video please enable JavaScript, and consider upgrading to a web browser that
       <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
     </p>
   </video>
+  <script type="text/javascript">
+    function changeMovie(movieNum){
+      debugger;
 
-  <button type="button">Video1</button>
-  <button type="button">Video2</button>
-  <button type="button">Video3</button>
+      switch (movieNum){
+        case 1:
+          document.getElementById("claravideo_html5_api").src = "Video1.mov";
+          break;
+        case 2:
+          document.getElementById("claravideo_html5_api").src = "Video2.mov";
+          break;
+        case 3:
+          document.getElementById("claravideo_html5_api").src = "Video3.mov";
+          break;
+      }
+    }
+  </script>
+  
+
+  <button type="button" onclick="changeMovie(1)">Video1</button>
+  <button type="button" onclick="changeMovie(2)">Video2</button>
+  <button type="button" onclick="changeMovie(3)">Video3</button>
   </section>
+
 
   <script src="http://vjs.zencdn.net/5.8.6/video.js"></script>
 
@@ -36,41 +56,43 @@
 
  <h3>My Videos page</h3>
 
+ <script type="text/javascript">
+    function rateMovie(rateNum){
+       
+      debugger;
+        switch (rateNum){
+        case 2:
+          document.getElementById("rating-2").checked = true;
+          document.getElementById("rating-1").checked = false;
+          break;
+        case 3:
+           document.getElementById("rating-3").checked = true;
+          document.getElementById("rating-1").checked = false;
+          break;
+        case 4:
+           document.getElementById("rating-4").checked = true;
+          document.getElementById("rating-1").checked = false;
+          break;
+        }
+        
+    }
+  </script>
+
 <div class="stars">
 <form action="" target="_self">  
-<label><input id="rating-1" name="rating" type="radio" value="1"/>1 Star</label>  
-<label><input id="rating-2" name="rating" type="radio" value="2"/>2 Stars</label>  
-<label><input id="rating-3" name="rating" type="radio" value="3"/>3 Stars</label>  
-<label><input id="rating-4" name="rating" type="radio" value="4"/>4 Stars</label>
-<input type="submit" value="Submit">
+<label><input id="rating-1" name="rating" type="radio" value="1" checked = true onchange="rateMovie(1)"/>1 Star</label>  
+<label><input id="rating-2" name="rating" type="radio" value="2" onchange="rateMovie(2)"/>2 Stars</label>  
+<label><input id="rating-3" name="rating" type="radio" value="3" onchange="rateMovie(3)"/>3 Stars</label>  
+<label><input id="rating-4" name="rating" type="radio" value="4" onchange="rateMovie(4)"/>4 Stars</label>
+<!--<input type="submit" value="Submit">-->
 </form>
 <br>
 <label id="mylabel">Rating: </label>
-<script >
-  debugger;
-  for (var i=0;i<4;i++){
-    if(document.getElementsByName("rating")[i].checked)
-    {
-      var myid = document.getElementById("mylabel");
-      myid.value = document.getElementsByName("rating").value;
-    }
-  }
 
-</script>
+
 <label></label>
 
 </div>
-
-<!--<script >
-  
-
-var starRating = {  create: function(selector) {    $(selector).each(function() {      // Hide radio buttons and add star links   
- });  },  addHandlers: function(item) {    $(item).click(function(e) {      // Handle star click   
-  })    .hover(function() {      // Handle star hover over    
-  },function() {      // Handle star hover out    
-  });  }}
-
-</script>-->
 
 <a href="MY_VIDEO.mov" >View on GitHub</a>
 
